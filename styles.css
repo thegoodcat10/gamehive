@@ -1,0 +1,73 @@
+:root,
+:host {
+  --pico-font-family-sans-serif: "Trebuchet MS", system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
+  --pico-nav-element-spacing-vertical: 0;
+
+  --header-size: 100px;
+  --header-background: var(--pico-color-azure-50);
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :host(:not([data-theme])),
+  :root:not([data-theme]) {
+    --header-background: var(--pico-color-azure-750);
+  }
+}
+
+
+body {
+  padding-block-start: var(--header-size);
+  padding-inline: var(--pico-spacing);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-inline: var(--pico-spacing);
+  background-color: var(--header-background);
+}
+
+h1.site-title {
+  margin-block-end: 0;
+
+  a {
+    color: var(--pico-h1-color);
+    text-decoration: none;
+  }
+}
+
+nav li + li {
+  border-inline-start: 1px solid var(--pico-primary-border);
+}
+
+main {
+  text-align: center;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: calc(var(--header-size) * -1);
+  visibility: hidden;
+}
+
+section + section {
+  border-block-start: 1px solid var(--pico-primary-border);
+  padding-block-start: var(--pico-spacing);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pico-spacing);
+}
+
+footer {
+  margin-block-start: 5rem;
+}
